@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <title>Ejercicio 4</title>
+    <script type="text/javascript">
+        window.onload = function(){
+           document.getElementById("Boton").onclick = function(){
+                let num1=document.getElementById("C1").value; 
+                let num2=document.getElementById("C2").value;
+                let suma=parseInt(num1)+parseInt(num2);
+
+
+                const tabla = document.createElement("table");
+                const tbody = document.createElement("tbody");
+                tabla.border="1";
+
+                //Creamos las filas y las celdas
+
+                for(let i = 0; i<1; i++){ //El parametro i<2, el 2 es el numero de filas
+                    const fila= document.createElement("tr");
+
+                    for(let j = 0; j<5; j++){//El parametro j<1, el 1 es el numero de columnas
+                        const celda= document.createElement("td");
+                        switch(j){
+                            case 0:
+                                celda.textContent = parseInt(num1);
+                            break;
+                            case 1:
+                                celda.textContent = "+";
+                            break;
+                            case 2:
+                                celda.textContent =parseInt(num2);
+                            break;
+                            case 3:
+                                celda.textContent ="=";
+                            break;
+                            case 4:
+                                celda.textContent =suma;
+                            break;
+                        }
+
+                        fila.appendChild(celda);
+                    }
+
+                    tbody.appendChild(fila);
+                }
+                //Este bucle sirve para hacer las tablas con todads las filas y columnas deseadas.
+                tabla.appendChild(tbody);
+                document.getElementById('Tabla').appendChild(tabla);
+            }
+        }
+    </script>  
+  </head>
+    <body>
+        <button id="Boton">Sumar</button>
+        <input id="C1" Type="text"> 
+        <span> + </span> 
+        <input id="C2" Type="text"> 
+
+        <div id="Tabla"></div>
+  </body>
+</html>

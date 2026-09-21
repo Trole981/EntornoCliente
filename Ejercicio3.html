@@ -5,21 +5,19 @@
     <title>Ejercicio 3</title>
     <script type="text/javascript">
         window.onload = function(){
-           document.getElementById('Boton').onclick() = function(){
-                let num1=document.getElementById('C1').value; 
-                let num2=document.getElementById('C2').value;
-                let suma=num1+num2;
+           document.getElementById("Boton").onclick = function(){
+                let num1=document.getElementById("C1").value; 
+                let num2=document.getElementById("C2").value;
+                let suma=parseInt(num1)+parseInt(num2);
                 alert(suma);
            }
         }
     </script>  
   </head>
-  <body>
-    <div>
+    <body>
         <button id="Boton">Sumar</button>
         <input id="C1" Type="text"> 
         <span> + </span> 
         <input id="C2" Type="text"> 
-    </div>
   </body>
 </html>
