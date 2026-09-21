@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <title>Ejercicio 1</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            const tabla = document.createElement("table");
+            const tbody = document.createElement("tbody");
+            tabla.border="1";
+
+            //Creamos las filas y las celdas
+
+            for(let i = 0; i<2; i++){ //El parametro i<2, el 2 es el numero de filas
+                const fila= document.createElement("tr");
+                console.log(i);
+
+                for(let j = 0; j<1; j++){//El parametro j<1, el 1 es el numero de columnas
+                    const celda= document.createElement("td");
+                    celda.textContent = `Fila ${i}, Col ${j}`;
+
+                    fila.appendChild(celda);
+                }
+
+                tbody.appendChild(fila);
+            }
+            //Este bucle sirve para hacer las tablas con todads las filas y columnas deseadas.
+            tabla.appendChild(tbody);
+            document.getElementById('Tabla').appendChild(tabla);
+        }
+    </script>  
+  </head>
+  <body>
+    <div id="Tabla"></div>
+  </body>
+</html>
